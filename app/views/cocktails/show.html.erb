@@ -1,0 +1,9 @@
+<h1>My cocktail</h1>
+
+<h2><%= @cocktail.name %></h2>
+
+<h2><% @cocktail.ingredients.each { |ingredient| puts ingredient.name } %></h2>
+
+<h2><% @cocktail.doses.each { |dose| puts dose.description } %></h2>
+
+<%= link_to "Add an ingredient for this cocktail", new_cocktail_dose_path(@cocktail) %>
