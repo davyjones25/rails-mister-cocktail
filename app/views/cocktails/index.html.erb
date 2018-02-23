@@ -1,5 +1,14 @@
 <h1>My Cocktails</h1>
 
-<% @cocktails.each do |cocktail| %>
-  <h2><%= link_to "#{cocktail.name}", cocktail_path(cocktail) %></h2>
-<% end %>
+<div class="container">
+	<ul>
+		<% @cocktails.each do |cocktail| %>
+		  <li>
+	 		  <h2><%= link_to "#{cocktail.name}", cocktail_path(cocktail) %></h2> 
+	 		  <p><%= link_to "Delete", dose_path(cocktail), method: :delete %></p>		  	
+		  </li>
+		<% end %>	
+	</ul>
+</div>
+
+<%= link_to "Add a new cocktail to my CocktailLibrary", new_cocktail_path  %>

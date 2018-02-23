@@ -2,8 +2,10 @@
 
 <h2><%= @cocktail.name %></h2>
 
-<h2><% @cocktail.ingredients.each { |ingredient| puts ingredient.name } %></h2>
-
-<h2><% @cocktail.doses.each { |dose| puts dose.description } %></h2>
+<% @cocktail.doses.each do |dose| %>
+  <p><%= dose.ingredient.name %> de <%= dose.description %></p>
+<% end %>
 
 <%= link_to "Add an ingredient for this cocktail", new_cocktail_dose_path(@cocktail) %>
+
+<%= link_to "Back to list", cocktails_path %>
